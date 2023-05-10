@@ -13,9 +13,7 @@ Future<List<dynamic>> fetchKategori() async {
 }
 
 Future<List<dynamic>> fetchKeranjang() async {
-  var uri = Uri.http('localhost:8080', 'keranjang');
-  print(uri);
-  var response = await http.get(uri);
+  var response = await http.get(Uri.parse('http://localhost:8080/keranjang'));
 
   if (response.statusCode == 200) {
     var data = jsonDecode(response.body);
